@@ -1,0 +1,75 @@
+<template>
+    <lightning-card title="Create Event" icon-name="standard:account" onsuccess={handleSuccess}>
+        <div class="slds-var-m-around_small slds-is-relative">
+
+            <lightning-spinner 
+                if:true={isLoading}
+                alternative-text="Loading"
+                size="large">
+            </lightning-spinner>
+
+            <lightning-input 
+                label="Event Name" 
+                name="Name__c" 
+                onchange={handleChange} 
+                class="slds-var-p-around_x-small"
+                value={eventRecord.Name__c}>
+            </lightning-input>
+            
+            <c-custom-lookup 
+                field-label="Select event organizer" 
+                child-object-api-name='Event__c'
+                target-field-api-name='Event_Organizer__c'
+                name='Event_Organizer__c'
+                onchange={handleChangeForLookup}
+                value={eventRecord.Event_Organizer__c}
+                required>
+            </c-custom-lookup>
+
+
+            <lightning-input 
+                label="Max Attendees" 
+                name="Max_Seats__c" 
+                onchange={handleChange} 
+                class="slds-var-p-around_x-small"
+                value={eventRecord.Max_Seats__c}>
+            </lightning-input>
+
+
+            <lightning-input 
+                label="Start date and time" 
+                name="Start_Date_Time__c"
+                type="datetime"
+                onchange={handleChange} 
+                class="slds-var-p-around_x-small"
+                value={eventRecord.Start_Date_Time__c}>
+            </lightning-input>
+
+            <lightning-input 
+                label="End date and time" 
+                name="End_Date_Time__c"
+                type="datetime"
+                onchange={handleChange} 
+                class="slds-var-p-around_x-small"
+                value={eventRecord.End_Date_Time__c}>
+            </lightning-input>
+
+            <lightning-input-rich-text
+                label="Event Detail" 
+                name="Event_Detail__c"
+                onchange={handleChange} 
+                class="slds-var-p-around_x-small"
+                value={eventRecord.Event_detail__c}>
+            </lightning-input-rich-text>
+
+            <div class="slds-var-m-around_x-small">
+                <lightning-button
+                    label="Create an event"
+                    variant="brand"
+                    onclick={createEvent}>
+                </lightning-button>
+            </div>
+            
+        </div>   
+    </lightning-card>
+</template>

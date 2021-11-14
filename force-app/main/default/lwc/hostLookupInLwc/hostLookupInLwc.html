@@ -1,0 +1,7 @@
+<template>
+    <div class="slds-card">
+        <c-custom-lookup field-label="Select event organizer" child-object-api-name='Event__c'
+            target-field-api-name='Event_organizer__c' required onvalueselected={handleValueSelcted}></c-custom-lookup>
+        The selected record Id is:- {selectedRecordId}
+    </div>
+</template>

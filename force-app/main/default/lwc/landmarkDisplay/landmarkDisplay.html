@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Location Landmark" icon-name="standard:contact">
+        <template if:true={location.data}>
+            <div class="slds-m-around_medium">
+                <p>{street}</p>
+                <p>{city}</p>
+                <p>{country}, {state} {postal}</p>
+            </div>
+        </template>
+        <!-- <template if:true={location.error}>
+            <c-error-panel errors={location.error}></c-error-panel>
+        </template> -->
+    </lightning-card>
+</template>

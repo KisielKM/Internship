@@ -1,0 +1,29 @@
+<template>
+    <lightning-card title="Lookup Demo" icon-name="standard:record">
+        <div class="slds-p-around_small">
+            <p>Hello, {name}!</p>
+
+            <lightning-input label="Name" value={name} onchange={nameChange}></lightning-input>
+            <lightning-input label="Event Organizer" value={name} onchange={nameChange}></lightning-input>
+            <lightning-input type = "date" label="Date" value={name} onchange={nameChange}></lightning-input>
+            <lightning-input type = "time" label="Time" value={name} onchange={nameChange}></lightning-input>
+            <lightning-input type = "date" label="Date" value={name} onchange={nameChange}></lightning-input>
+            <lightning-input type = "time" label="Time" value={name} onchange={nameChange}></lightning-input>
+            <lightning-input label="Max Attendees" value={name} onchange={nameChange}></lightning-input>
+            <lightning-input label="Event Location" value={name} onchange={nameChange}></lightning-input>
+           
+        </div>
+
+        <div class="slds-p-around_small">
+                <c-customlwclookup object-name="Case" field-name="Subject"
+                    label="Case" parentidfield="Case__c"
+                    iconname="standard:case" ></c-customlwclookup>
+        </div>
+
+        <div class="slds-p-around_small">
+                <c-customlwclookup object-name="Contact" field-name="Name"
+                    label="Contact" parentidfield="ContactId"
+                    iconname="standard:contact" ></c-customlwclookup>
+        </div>
+    </lightning-card>
+</template>
